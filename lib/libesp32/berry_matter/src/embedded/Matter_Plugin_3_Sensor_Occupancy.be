@@ -91,9 +91,9 @@ class Matter_Plugin_Sensor_Occupancy : Matter_Plugin_Device
           return tlv_solo.set(TLV.NULL, nil)
         end
       elif attribute == 0x0001          #  ---------- OccupancySensorType / enum8 ----------
-        return tlv_solo.set(TLV.U1, 3)  # physical contact
+        return tlv_solo.set(TLV.U1, 1)  # 1 Ultrasonic
       elif attribute == 0x0002          #  ---------- OccupancySensorTypeBitmap / u8 ----------
-        return tlv_solo.set(TLV.U1, 0)  # unknown
+        return tlv_solo.set(TLV.U1, 1)  # 1 Ultrasonic
       elif attribute == 0xFFFC          #  ---------- FeatureMap / map32 ----------
         return tlv_solo.set(TLV.U4, 0)
       elif attribute == 0xFFFD          #  ---------- ClusterRevision / u2 ----------
