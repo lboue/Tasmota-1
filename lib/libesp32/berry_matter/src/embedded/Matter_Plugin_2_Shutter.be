@@ -100,13 +100,13 @@ class Matter_Plugin_Shutter : Matter_Plugin_Device
       self.update_shadow_lazy()
       self.update_inverted()
       if   attribute == 0x0000          #  ---------- Type / enum8 ----------
-        return tlv_solo.set(TLV.U1, 0xFF) # 0xFF = unknown type of shutter
+        return tlv_solo.set(TLV.U1, 0x06) # 0xFF = unknown type of shutter / 6 = Shutter
       elif attribute == 0x0005          #  ---------- NumberOfActuationsLift / u16 ----------
         return tlv_solo.set(TLV.U2, 0)
       elif attribute == 0x0007          #  ---------- ConfigStatus / u8 ----------
         return tlv_solo.set(TLV.U1, 1 + 8)   # Operational + Lift Position Aware
-      elif attribute == 0x000D          #  ---------- EndProductType / u8 ----------
-        return tlv_solo.set(TLV.U1, 0xFF) # 0xFF = unknown type of shutter
+      elif attribute == 0x000D          #  ---------- EndProductType / u8 ---------- 10 => A = InteriorBlind Interior Blind LF & TL
+        return tlv_solo.set(TLV.U1, 0x0A) # 0xFF = unknown type of shutter
       elif attribute == 0x000E          #  ---------- CurrentPositionLiftPercent100ths / u16 ----------
         if self.shadow_shutter_inverted == 0
           matter_position = (100 - self.shadow_shutter_pos) * 100
