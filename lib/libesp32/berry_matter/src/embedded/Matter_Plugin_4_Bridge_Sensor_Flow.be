@@ -25,12 +25,12 @@ import matter
 
 class Matter_Plugin_Bridge_Sensor_Flow : Matter_Plugin_Bridge_Sensor
   static var TYPE = "http_flow"                 # name of the plug-in in json
-  static var DISPLAY_NAME = "Flow"            # display name of the plug-in
+  static var DISPLAY_NAME = "Flow"              # display name of the plug-in
 
   static var CLUSTERS  = matter.consolidate_clusters(_class, {
-    0x0404: [0,1,2,0xFFFC,0xFFFD],                  # Flow Measurement
+    0x0404: [0,1,2,0xFFFC,0xFFFD],              # Flow Measurement
   })
-  static var TYPES = { 0x0306: 2 }                  # Flow Sensor, rev 2
+  static var TYPES = { 0x0306: 1 }              # Flow Sensor, rev 1
 
   #############################################################
   # Called when the value changed compared to shadow value
@@ -47,7 +47,7 @@ class Matter_Plugin_Bridge_Sensor_Flow : Matter_Plugin_Bridge_Sensor
   # This must be overriden.
   # This allows to convert the raw sensor value to the target one, typically int
   def pre_value(val)
-    return val != nil ? int(val) : nil
+    return val != nil ? int(val * 10) : nil     # MeasuredValue represents 10 x flow in m3/h
   end
 
   #############################################################
@@ -62,7 +62,7 @@ class Matter_Plugin_Bridge_Sensor_Flow : Matter_Plugin_Bridge_Sensor
     if   cluster == 0x0404              # ========== Flow Measurement 2.1.2 p.127 ==========
       if   attribute == 0x0000          #  ---------- MeasuredValue / i16 ----------
         if self.shadow_value != nil
-          return tlv_solo.set(TLV.U2, int(10*(self.shadow_value))) # MeasuredValue represents 10 x flow in m3/h.
+          return tlv_solo.set(TLV.U2, int(self.shadow_value)) # MeasuredValue represents 10 x flow in m3/h.
         else
           return tlv_solo.set(TLV.NULL, nil)
         end
