@@ -63,7 +63,7 @@ class Matter_Plugin_Sensor_Flow : Matter_Plugin_Sensor
     if   cluster == 0x0404              # ========== Flow Measurement 2.4 p.98 ==========
       if   attribute == 0x0000          #  ---------- MeasuredValue / i16 ----------
         if self.shadow_value != nil
-          return tlv_solo.set(TLV.U2, int(self.shadow_value)) # MeasuredValue represents the flow in m3/h
+          return tlv_solo.set(TLV.U2, int(10*(self.shadow_value))) # MeasuredValue represents 10 x flow in m3/h.
         else
           return tlv_solo.set(TLV.NULL, nil)
         end
