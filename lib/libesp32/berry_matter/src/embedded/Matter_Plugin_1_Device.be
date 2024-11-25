@@ -41,7 +41,6 @@ class Matter_Plugin_Device : Matter_Plugin
     0x0039: [3,5,0x0A,0x0F,0x11,0x12],              # Bridged Device Basic Information 9.13 p.485
     0x0003: [0,1],                                  # Identify 1.2 p.16
     0x0004: [0],                                    # Groups 1.3 p.21
-    0x0005: [0,1,2,3,4,5],                          # Scenes 1.4 p.30 - no writable
   })
   static var TYPES = { 0x0013: 1 }                  # fake type
   static var NON_BRIDGE_VENDOR = [ 0x1217, 0x1381 ] # Fabric VendorID not supporting Bridge mode
