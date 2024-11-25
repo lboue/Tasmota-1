@@ -55,7 +55,7 @@ class Matter_Plugin
   static var CLUSTER_REVISIONS = {
     0x0003: 4,                              # New data model format and notation
     0x0004: 4,                              # New data model format and notation
-    0x0005: 5,                              # "new data model format and notation"
+    # 0x0005: 5,                              # "new data model format and notation"
     0x0006: 5,                              # Addition of Dead Front behavior and associated FeatureMap entry
     0x0008: 5,                              # "new data model format and notation"
     0x001D: 2,                              # Semantic tag list; TagList feature

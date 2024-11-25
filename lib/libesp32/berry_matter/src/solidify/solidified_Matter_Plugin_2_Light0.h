@@ -712,14 +712,13 @@ be_local_class(Matter_Plugin_Light0,
     ( (struct bmapnode*) &(const bmapnode[]) {
         { be_const_key_weak(update_virtual, 13), be_const_closure(class_Matter_Plugin_Light0_update_virtual_closure) },
         { be_const_key_weak(CLUSTERS, 15), be_const_simple_instance(be_nested_simple_instance(&be_class_map, {
-        be_const_map( *     be_nested_map(6,
+        be_const_map( *     be_nested_map(5,
     ( (struct bmapnode*) &(const bmapnode[]) {
+        { be_const_key_int(29, -1), be_const_bytes_instance(0000000100020003FFF8FFF9FFFAFFFBFFFCFFFD) },
         { be_const_key_int(6, -1), be_const_bytes_instance(0000FFF8FFF9FFFAFFFBFFFCFFFD) },
-        { be_const_key_int(5, -1), be_const_bytes_instance(000000010002000300040005FFF8FFF9FFFAFFFBFFFCFFFD) },
         { be_const_key_int(57, -1), be_const_bytes_instance(00030005000A000F00110012FFF8FFF9FFFAFFFBFFFCFFFD) },
-        { be_const_key_int(3, 2), be_const_bytes_instance(00000001FFF8FFF9FFFAFFFBFFFCFFFD) },
-        { be_const_key_int(4, -1), be_const_bytes_instance(0000FFF8FFF9FFFAFFFBFFFCFFFD) },
-        { be_const_key_int(29, 1), be_const_bytes_instance(0000000100020003FFF8FFF9FFFAFFFBFFFCFFFD) },
+        { be_const_key_int(3, -1), be_const_bytes_instance(00000001FFF8FFF9FFFAFFFBFFFCFFFD) },
+        { be_const_key_int(4, 0), be_const_bytes_instance(0000FFF8FFF9FFFAFFFBFFFCFFFD) },
     }))    ) } )) },
         { be_const_key_weak(zigbee_received, 0), be_const_closure(class_Matter_Plugin_Light0_zigbee_received_closure) },
         { be_const_key_weak(TYPE, -1), be_nested_str_weak(light0) },
