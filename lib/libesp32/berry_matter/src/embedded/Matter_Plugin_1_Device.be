@@ -122,9 +122,6 @@ class Matter_Plugin_Device : Matter_Plugin
       end
 
     # ====================================================================================================
-    elif cluster == 0x0005              # ========== Scenes 1.4 p.30 - no writable ==========
-
-    # ====================================================================================================
     elif cluster == 0x001D              # ========== Descriptor Cluster 9.5 p.453 ==========
 
       if   attribute == 0x0000          # ---------- DeviceTypeList / list[DeviceTypeStruct] ----------
